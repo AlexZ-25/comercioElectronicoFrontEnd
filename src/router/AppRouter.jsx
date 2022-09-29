@@ -1,15 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Navigate,
-  Route,
-  Routes,
-} from "react-router-dom";
-import {AuthContext} from "../context/AuthContext"
+import { BrowserRouter as Router } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import HomePage from "../pages/HomePage";
-import LoginPage from "../pages/LoginPage";
+import RutasAdmin from "./RutasAdmin";
+import RutasPublicas from "./RutasPublicas";
+import RutasPrivadas from "./RutasPrivadas";
 
 const AppRouter = () => {
   const { auth, verifyingToken } = useContext(AuthContext);
@@ -20,12 +15,15 @@ const AppRouter = () => {
 
   return (
     <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      {auth.authStatus ? (
+        auth.permissions === "admin" ? (
+          <RutasAdmin />
+        ) : (
+          <RutasPrivadas />
+        )
+      ) : (
+        <RutasPublicas />
+      )}
       <Footer />
     </Router>
   );

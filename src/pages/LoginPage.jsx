@@ -33,9 +33,10 @@ const LoginPage = () => {
         </article>
       </section>
       <main className="row">
-        <article className="col ms-3 me-3 mb-3">
-          <form onSubmit={handleForm}>
+        <article className="col d-flex justify-content-center align-items-center mb-3">
+          <form className="w-50" onSubmit={handleForm}>
             <div className="form-group mt-3">
+              <h1 className="text-center">Inicia sesión</h1>
               <label htmlFor="InputUsername">User name</label>
               <input
                 type="text"

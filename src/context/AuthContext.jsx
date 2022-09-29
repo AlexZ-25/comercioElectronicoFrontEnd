@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }) => {
       username: data.data.username,
       password: data.data.password,
       permissions: "user",
+      authStatus: true,
     });
     localStorage.setItem("token1", data.token);
   };
@@ -48,10 +49,9 @@ export const AuthProvider = ({ children }) => {
   const verifyingToken = useCallback(async () => {
     console.log('Ejecutando....')
     const token = localStorage.getItem("token1");
-    console.log(token)
     if (token) {
+      console.log(token)
       const resp = await verifyingTokenService();
-
       localStorage.setItem("token1", resp.token);
 
       setAuth({

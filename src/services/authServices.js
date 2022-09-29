@@ -21,6 +21,7 @@ export const signupService = async (form) => {
 }
 
 export const verifyingTokenService = async () => {
+    console.log('corriendo verifyingTokenService')
     const resp = await axios.get(`${URL_ROOT}/auth`, CONFIG);
     return resp.data;
 }
