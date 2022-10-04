@@ -22,9 +22,9 @@ const EpisodeState = ({ children }) => {
     const resp = await obtenerEpisodesService();
     const episodes = resp.data.map((obj) => {
       return {
-        Id,
-        Nombre,
-        URL,
+        Id: obj.Id,
+        Nombre: obj.Nombre,
+        URL: obj.URL,
       };
     });
 
@@ -48,9 +48,9 @@ const EpisodeState = ({ children }) => {
     const res = await obtenerEpisodeService(id);
     console.log(res.data);
     const episode = {
-      Id,
-      Nombre,
-      URL,
+      Id: res.data.Id,
+      Nombre: res.data.Id,
+      URL: res.data.URL,
     };
     dispatch({
       type: "OBTENER_EPISODE",

@@ -49,7 +49,7 @@ const NavBar = () => {
                     isActive ? "nav-link active" : "nav-link"
                   }
                   aria-current="page"
-                  to="/#quienes-somos"
+                  to={{hash:"#quienes-somos" }} 
                 >
                   Quiénes somos
                 </NavLink>
@@ -62,7 +62,7 @@ const NavBar = () => {
                   aria-current="page"
                   to="#episodios"
                 >
-                  Episodios Podcast
+                  Episodios podcast
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -95,7 +95,18 @@ const NavBar = () => {
                   aria-current="page"
                   to="/nuevoepisodio"
                 >
-                  Agregar Episodio
+                  Agregar episodio
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  aria-current="page"
+                  to="/carrito"
+                >
+                  Carrito
                 </NavLink>
               </li>
             </ul>

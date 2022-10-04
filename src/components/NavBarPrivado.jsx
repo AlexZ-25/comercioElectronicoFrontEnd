@@ -43,11 +43,12 @@ const NavBar = () => {
                     isActive ? "nav-link active" : "nav-link"
                   }
                   aria-current="page"
-                  to="/#quienes-somos"
+                  to={{hash:"#quienes-somos" }} 
                 >
                   Quiénes somos
                 </NavLink>
               </li>
+              <hr className="nav-item-divider" />
               <li className="nav-item">
                 <NavLink
                   className={({ isActive }) =>
@@ -56,7 +57,7 @@ const NavBar = () => {
                   aria-current="page"
                   to="#episodios"
                 >
-                  Episodios Podcast
+                  Episodios podcast
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -79,6 +80,17 @@ const NavBar = () => {
                   to="/#contacto"
                 >
                   Contacto
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  aria-current="page"
+                  to="/carrito"
+                >
+                  Carrito
                 </NavLink>
               </li>
             </ul>
@@ -123,7 +135,9 @@ const NavBar = () => {
                     </li>
                     <hr className="dropdown-divider" />
                     <li>
-                      <button className="dropdown-item" onClick={logout}>Cerrar sesión</button>
+                      <button className="dropdown-item" onClick={logout}>
+                        Cerrar sesión
+                      </button>
                     </li>
                   </ul>
                 </li>

@@ -13,8 +13,9 @@ const NewEpisode = () => {
   
   const handleForm = async (e) => {
     e.preventDefault();
+    console.log(form);
     await crearEpisode(form);
-    alert(`El episodio ${form.Name} se ha agregado exitosamente.`);
+    alert(`El episodio "${form.Nombre}" se ha agregado exitosamente.`);
   };
 
   const cambio = (e) => {
@@ -49,10 +50,10 @@ const NewEpisode = () => {
               </label>
               <input
                 type="text"
+                name="Nombre"
                 className="form-control"
                 id="inputNombre"
-                name="nombre"
-                value={form.nombre}
+                value={form.Nombre}
                 onChange={cambio}
               />
             </div>

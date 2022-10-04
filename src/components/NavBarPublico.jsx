@@ -56,7 +56,7 @@ const NavBar = () => {
                   aria-current="page"
                   to="#episodios"
                 >
-                  Episodios Podcast
+                  Episodios podcast
                 </NavLink>
               </li>
               <li className="nav-item">

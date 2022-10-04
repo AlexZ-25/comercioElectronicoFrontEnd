@@ -14,7 +14,7 @@ export const obtenerEpisodesService = async () => {
 }
 
 export const crearEpisodeService = async (form) => {
-    const resp = await axios.get(`${URL}`,
+    const resp = await axios.post(`${URL}`,
         form, CONFIG)
     return resp.data;
 }
